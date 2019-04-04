@@ -11,6 +11,7 @@ render(){
                 key={item.id}
                 name={item.name}
                 score={item.score}
+                stars={item.stargazers_count}
                 updated_at={item.updated_at}
                 created_at={item.created_at}
                 language={item.language}

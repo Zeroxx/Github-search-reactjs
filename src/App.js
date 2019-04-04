@@ -10,12 +10,13 @@ class App extends Component {
       searchQuery:'',
       searchResults:[],
       searchFilter: '',
+      searchSorting: '',
       showResults:false
     }
   }
 
   search = () =>{
-    axios.get(`https://api.github.com/search/repositories?&q=${this.state.searchQuery}${this.state.searchFilter}&per_page=100`)
+    axios.get(`https://api.github.com/search/repositories?&q=${this.state.searchQuery}${this.state.searchFilter}&sort=${this.state.searchSorting}&per_page=100`)
     .then((results)=>{
       console.log(results.data.items);
       this.setState({
@@ -31,6 +32,13 @@ class App extends Component {
     })
   }
   
+  handleSorting=(searchSorting)=>{
+    this.setState(
+      {searchSorting: searchSorting.target.value},
+      this.search
+    )
+  }
+
   handleFilter=(filterLanguage)=>{
     this.setState(
       {searchFilter:'+language:' + filterLanguage},
@@ -72,8 +80,13 @@ class App extends Component {
         <input type='text' className="searchInput"
          value={this.state.searchQuery}
          onChange={(searchInput)=>this.handleChange(searchInput)} />
-        <button className="searchBtn" onClick={this.handleClick}>Search</button> 
-      
+        <button className="searchBtn" onClick={this.handleClick}>Search</button>
+        
+        <select className="searchSort" name="sorting" onChange={(searchSorting)=>this.handleSorting(searchSorting)}>
+          <option value="">Best Match</option>
+          <option value="stars">Stars</option>
+        </select>
+
         <div className="filterblock">
           <p>Filter on languages</p>
           <button className="filterButton" onClick={()=>this.handleFilter('Java')}>Java</button>
