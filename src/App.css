@@ -1,0 +1,51 @@
+   
+.App {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.searchInput {
+  width: 30%;
+  padding: 15px 20px;
+  margin: 10px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+.searchBtn{
+  padding: 15px 20px;
+  margin: 10px 0;
+  font-size: 20px; 
+  border: none;
+  cursor: pointer;
+  background-color: #e0e0e0;
+}
+
+.searchBtn:hover{
+  background-color: #0366d6;
+  color: #fff;
+}
+
+.pButton {
+  font-size: 20px;
+  color: red;
+  
+}
+
+.filterButton{
+  background-color: #a9a9a9;
+  border: none;
+  margin-left: 20px;
+  color: white;
+  padding:12px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.filterButton:hover {background-color: #0366d6}

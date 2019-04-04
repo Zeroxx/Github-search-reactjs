@@ -1,0 +1,14 @@
+.Searchitem {
+    box-sizing: border-box;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 5px;
+    border:1px solid #bbbbbb;
+    margin-top:10px;
+    width:20%;
+    color: #000;
+}
+    
+.Searchitem:hover{
+    border: solid 3px #0366d6;
+}
